@@ -1,14 +1,21 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import CategoryButtons from "./components/CategoryButtons";
+import LocationButtons from "./components/locationButtons";
 import Cards from "./components/cards";
 import Home from "./pages/home";
-import CategoriesCards from "./pages/categories-Cards"; // Importa el nuevo archivo
+import CategoriesCards from "./pages/categories-Cards";
+import Location from "./pages/location";
 
 export default function App() {
+  const location = useLocation();
+
   return (
     <div>
-      <CategoryButtons />
+      {/* Solo muestra CategoryButtons si NO estamos en /location */}
+      {!location.pathname.startsWith("/location") && <CategoryButtons />}
+      {/* Solo muestra LocationButtons si estamos en /location */}
+      {location.pathname.startsWith("/location") && <LocationButtons />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/filter.php" element={<Cards />} />
@@ -16,6 +23,7 @@ export default function App() {
           path="/filter.php/c/:categoryName"
           element={<CategoriesCards />}
         />
+        <Route path="/location/:areaName" element={<Location />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </div>
