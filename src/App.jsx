@@ -1,8 +1,11 @@
+import React from "react";
+import HeroCarousel from "./assets/components/HeroCarousel";
+
 function App() {
   return (
-    <>
-      <h1 className="bg-red-300 font-bold">Testing-- tailwind</h1>
-    </>
+    <div className="App w-full h-full">
+      <HeroCarousel/>
+    </div>
   );
 }
 
