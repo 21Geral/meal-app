@@ -1,3 +1,4 @@
+
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -10,6 +11,7 @@ import Home from "./pages/home";
 import CategoriesCards from "./pages/categories-Cards";
 import Location from "./pages/location";
 import HeroCarousel from "./assets/components/HeroCarousel";
+import MealDetail from "./assets/components/pages/MealDetail";
 
 export default function App() {
   const location = useLocation();
