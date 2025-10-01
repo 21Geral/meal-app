@@ -1,7 +1,14 @@
+import Footer from "./Footer";
+import Header from "./Header";
+import Search from "./Search";
+
 function App() {
   return (
     <>
-      <h1 className="bg-red-300 font-bold">Testing-- tailwind</h1>
+      <Header />
+      <br />
+      <Search />
+      <Footer />
     </>
   );
 }
