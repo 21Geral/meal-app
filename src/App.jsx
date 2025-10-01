@@ -9,7 +9,7 @@ import Cards from "./components/cards";
 import Home from "./pages/home";
 import CategoriesCards from "./pages/categories-Cards";
 import Location from "./pages/location";
-import HeroCarousel from "./assets/components/HeroCarousel";
+import HeroCarousel from "./components/HeroCarousel"
 
 export default function App() {
   const location = useLocation();
