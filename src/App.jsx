@@ -1,5 +1,7 @@
 import React from "react";
-
+import Footer from "./Footer";
+import Header from "./Header";
+import Search from "./Search";
 import { Routes, Route, useLocation } from "react-router-dom";
 import CategoryButtons from "./components/CategoryButtons";
 import LocationButtons from "./components/locationButtons";
@@ -13,8 +15,11 @@ export default function App() {
   const location = useLocation();
 
   return (
-    
-    
+    <>
+    <Header />
+      <br />
+      <Search />
+      <Footer />
     <div>
      <HeroCarousel/>
       {/* Solo muestra CategoryButtons si NO estamos en /location */}
@@ -33,5 +38,6 @@ export default function App() {
       </Routes>
 
     </div>
+        </>
   );
 }
