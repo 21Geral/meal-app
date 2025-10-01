@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Routes, Route, useLocation } from "react-router-dom";
 import CategoryButtons from "./components/CategoryButtons";
 import LocationButtons from "./components/locationButtons";
@@ -6,12 +7,16 @@ import Cards from "./components/cards";
 import Home from "./pages/home";
 import CategoriesCards from "./pages/categories-Cards";
 import Location from "./pages/location";
+import HeroCarousel from "./assets/components/HeroCarousel";
 
 export default function App() {
   const location = useLocation();
 
   return (
+    
+    
     <div>
+     <HeroCarousel/>
       {/* Solo muestra CategoryButtons si NO estamos en /location */}
       {!location.pathname.startsWith("/location") && <CategoryButtons />}
       {/* Solo muestra LocationButtons si estamos en /location */}
@@ -26,6 +31,7 @@ export default function App() {
         <Route path="/location/:areaName" element={<Location />} />
         <Route path="*" element={<Home />} />
       </Routes>
+
     </div>
   );
 }
