@@ -1,7 +1,9 @@
+import MealDetail from "./assets/components/pages/MealDetail";
+
 function App() {
   return (
     <>
-      <h1 className="bg-red-300 font-bold">Testing-- tailwind</h1>
+      <MealDetail />
     </>
   );
 }
