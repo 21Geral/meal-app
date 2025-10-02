@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Cards from "../components/cards";
+import Cards from "../assets/components/cards";
 
 export default function Location() {
   const { areaName: paramArea } = useParams();
@@ -44,9 +44,7 @@ export default function Location() {
         };
 
         const country = mapping[areaName] || areaName;
-        const res = await axios.get(
-          `https://restcountries.com/v3.1/name/${country}?fields=flags`
-        );
+        const res = await axios.get(`https://restcountries.com/v3.1/name/${country}?fields=flags`);
         setFlagUrl(res.data[0]?.flags?.svg || "");
       } catch (err) {
         console.error("Error fetching flag:", err.message);
@@ -59,17 +57,8 @@ export default function Location() {
 
   return (
     <div>
-      <h2
-        className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-3 pt-6"
-        style={{ color: "#d87801" }}
-      >
-        {flagUrl && (
-          <img
-            src={flagUrl}
-            alt={`${areaName} flag`}
-            className="w-8 h-6 object-cover rounded shadow"
-          />
-        )}
+      <h2 className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-3 pt-6" style={{ color: "#d87801" }}>
+        {flagUrl && <img src={flagUrl} alt={`${areaName} flag`} className="w-8 h-6 object-cover rounded shadow" />}
         {areaName}
       </h2>
       <Cards endpoint={`filter.php?a=${areaName}`} />
