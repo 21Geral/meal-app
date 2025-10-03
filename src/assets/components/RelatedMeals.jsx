@@ -12,7 +12,7 @@ export default function RelatedMeals({ category, currentMealId }) {
         .then((res) => {
           // Filtramos la receta actual
           const filtered = res.data.meals.filter((m) => m.idMeal !== currentMealId);
-          setRelatedMeals(filtered.slice(0, 4)); // solo 4
+          setRelatedMeals(filtered.slice(0, 5)); // solo 4
         })
         .catch((err) => console.error("Error cargando relacionadas:", err));
     }
