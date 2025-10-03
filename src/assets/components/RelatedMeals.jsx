@@ -11,10 +11,10 @@ export default function RelatedMeals({ category, currentMealId }) {
         .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
         .then((res) => {
           // Filtramos la receta actual
-          const filtered = res.data.meals.filter(
-            (m) => m.idMeal !== currentMealId
-          );
-          setRelatedMeals(filtered.slice(0, 4)); // solo 4
+
+          const filtered = res.data.meals.filter((m) => m.idMeal !== currentMealId);
+          setRelatedMeals(filtered.slice(0, 5)); 
+
         })
         .catch((err) => console.error("Error cargando relacionadas:", err));
     }
