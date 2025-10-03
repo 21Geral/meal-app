@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <header className="bg-[#8B2E2E] py-8 px-4">
@@ -16,11 +18,7 @@ export default function Header() {
             stroke="currentColor"
             className="size-10 text-white"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </label>
 
@@ -40,24 +38,16 @@ export default function Header() {
               if (input) input.checked = false;
             }}
           >
-            <img
-              src="/public/images/exit.png"
-              alt="Cerrar"
-              className="w-6 h-6"
-            />
+            <img src="/public/images/exit.png" alt="Cerrar" className="w-6 h-6" />
           </button>
 
           {/* Opciones menú mobile */}
           <div className="flex flex-col mt-5 text-2xl">
-            <div
-              onClick={() => {
-                window.location.href = "/";
-              }}
-              className="px-4 py-2 cursor-pointer active:scale-105"
-            >
-              Home
+            <div className="px-4 py-2 cursor-pointer active:scale-105">
+              <Link to="/" className="w-full h-full block">
+                Home
+              </Link>
             </div>
-
             <div
               onClick={() => {
                 window.scrollBy({ top: 550, behavior: "smooth" });
@@ -69,10 +59,7 @@ export default function Header() {
             >
               Category
             </div>
-            <li
-              onClick={() => (window.location.href = "/location")}
-              className="px-4 py-2 cursor-pointer active:scale-105"
-            >
+            <li onClick={() => (window.location.href = "/location")} className="px-4 py-2 cursor-pointer active:scale-105">
               Location
             </li>
             <div
@@ -96,32 +83,21 @@ export default function Header() {
         <div className="hidden md:flex md:flex-1 items-center justify-between pl-10">
           {/* Logo y nombre a la izquierda */}
           <div className="flex items-center gap-2">
-            <img
-              src="/public/images/logo.png"
-              alt="Logo"
-              className="h-16 w-auto"
-            />
+            <img src="/public/images/logo.png" alt="Logo" className="h-16 w-auto" />
             <h1 className="text-3xl text-white font-bold">Gourmet Recipe</h1>
           </div>
 
           {/* recarga la pag pc*/}
           <ul className="flex gap-10 text-white font-semibold text-2xl pr-10">
-            <li
-              onClick={() => (window.location.href = "/")}
-              className="cursor-pointer hover:text-gray-200"
-            >
-              Home
+            <li className="cursor-pointer hover:text-gray-200">
+              <Link to="/" className="cursor-pointer hover:text-gray-200">
+                Home
+              </Link>
             </li>
-            <li
-              onClick={() => window.scrollBy({ top: 580, behavior: "smooth" })}
-              className="cursor-pointer hover:text-gray-200"
-            >
+            <li onClick={() => window.scrollBy({ top: 580, behavior: "smooth" })} className="cursor-pointer hover:text-gray-200">
               Category
             </li>
-            <li
-              onClick={() => (window.location.href = "/location")}
-              className="cursor-pointer hover:text-gray-200"
-            >
+            <li onClick={() => (window.location.href = "/location")} className="cursor-pointer hover:text-gray-200">
               Location
             </li>
             <li
@@ -140,11 +116,7 @@ export default function Header() {
 
         {/* Logo centrado mobile */}
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none md:hidden">
-          <img
-            src="/public/images/logo.png"
-            alt="Logo"
-            className="h-16 w-auto"
-          />
+          <img src="/public/images/logo.png" alt="Logo" className="h-16 w-auto" />
           <h1 className="text-xl text-white font-bold">Gourmet Recipe</h1>
         </div>
       </div>

@@ -27,10 +27,7 @@ export default function CategoryButtons() {
   else if (windowWidth < 1024) visibleCount = 7;
 
   const showPrev = () => setStartIdx(Math.max(0, startIdx - visibleCount));
-  const showNext = () =>
-    setStartIdx(
-      Math.min(categories.length - visibleCount, startIdx + visibleCount)
-    );
+  const showNext = () => setStartIdx(Math.min(categories.length - visibleCount, startIdx + visibleCount));
 
   const visibleCategories = categories.slice(startIdx, startIdx + visibleCount);
 
