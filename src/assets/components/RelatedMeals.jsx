@@ -11,7 +11,9 @@ export default function RelatedMeals({ category, currentMealId }) {
         .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
         .then((res) => {
           // Filtramos la receta actual
-          const filtered = res.data.meals.filter((m) => m.idMeal !== currentMealId);
+          const filtered = res.data.meals.filter(
+            (m) => m.idMeal !== currentMealId
+          );
           setRelatedMeals(filtered.slice(0, 4)); // solo 4
         })
         .catch((err) => console.error("Error cargando relacionadas:", err));
@@ -26,8 +28,14 @@ export default function RelatedMeals({ category, currentMealId }) {
           to={`/meal/${meal.idMeal}`} // 👉 navega al detalle
           className="bg-white rounded-lg overflow-hidden shadow-md hover:scale-105 transition-transform duration-200 block"
         >
-          <img src={meal.strMealThumb} alt={meal.strMeal} className="w-full h-48 object-cover" />
-          <p className="p-2 text-sm font-semibold text-gray-700">{meal.strMeal}</p>
+          <img
+            src={meal.strMealThumb}
+            alt={meal.strMeal}
+            className="w-full h-48 object-cover"
+          />
+          <p className="p-2 text-sm font-semibold text-gray-700">
+            {meal.strMeal}
+          </p>
         </Link>
       ))}
     </div>
