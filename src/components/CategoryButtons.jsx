@@ -1,44 +1,23 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import useMealDbCarousel from "../hooks/useMealDbCarousel";
 
 const url = "https://www.themealdb.com/api/json/v1/1/categories.php";
+const visibleCountConfig = {
+  default: 7,
+  lg: 7,
+  sm: 3,
+};
 
 export default function CategoryButtons() {
-  const [categories, setCategories] = useState([]);
-  const [startIdx, setStartIdx] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    axios
-      .get(url)
-      .then((res) => setCategories(res.data.categories))
-      .catch((err) => console.log(err.message));
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  let visibleCount = 7;
-  if (windowWidth < 640) visibleCount = 3;
-  else if (windowWidth < 1024) visibleCount = 7;
-
-  const showPrev = () => setStartIdx(Math.max(0, startIdx - visibleCount));
-  const showNext = () =>
-    setStartIdx(
-      Math.min(categories.length - visibleCount, startIdx + visibleCount)
-    );
-
-  const visibleCategories = categories.slice(startIdx, startIdx + visibleCount);
+  const { visibleData, showPrev, showNext, isPrevDisabled, isNextDisabled } =
+    useMealDbCarousel(url, visibleCountConfig);
 
   return (
     <div className="flex justify-center items-center gap-3 py-4 w-full">
       <button
         onClick={showPrev}
-        disabled={startIdx === 0}
+        disabled={isPrevDisabled}
         className="rounded px-2 py-2 font-bold flex items-center"
         style={{ background: "#e8c7a3" }}
       >
@@ -46,7 +25,7 @@ export default function CategoryButtons() {
           <polygon points="15,6 9,12 15,18" fill="#d87801" />
         </svg>
       </button>
-      {visibleCategories.map((cat) => (
+      {visibleData.map((cat) => (
         <Link key={cat.idCategory} to={`/filter.php/c/${cat.strCategory}`}>
           <button
             value={cat.strCategory}
@@ -59,7 +38,7 @@ export default function CategoryButtons() {
       ))}
       <button
         onClick={showNext}
-        disabled={startIdx + visibleCount >= categories.length}
+        disabled={isNextDisabled}
         className="rounded px-2 py-2 font-bold flex items-center"
         style={{ background: "#e8c7a3" }}
       >

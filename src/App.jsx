@@ -1,15 +1,15 @@
-import Footer from "./assets/components/Footer";
-import Header from "./assets/components/Header";
-import Search from "./assets/components/Search";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Search from "./components/Search";
 import { Routes, Route, useLocation } from "react-router-dom";
-import CategoryButtons from "./assets/components/CategoryButtons";
-import LocationButtons from "./assets/components/locationButtons";
-import Cards from "./assets/components/cards";
+import CategoryButtons from "./components/CategoryButtons";
+import LocationButtons from "./components/locationButtons";
+import Cards from "./components/cards";
 import Home from "./pages/home";
 import CategoriesCards from "./pages/categories-Cards";
 import Location from "./pages/location";
-import HeroCarousel from "./assets/components/HeroCarousel";
-import MealDetail from "./assets/components/MealDetail";
+import HeroCarousel from "./components/HeroCarousel";
+import MealDetail from "./components/MealDetail";
 
 export default function App() {
   const location = useLocation();

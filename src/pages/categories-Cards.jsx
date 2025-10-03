@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Cards from "../assets/components/cards";
+import Cards from "../components/cards";
 
 export default function CategoriesCards() {
   const { categoryName } = useParams();

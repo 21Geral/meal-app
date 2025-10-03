@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Cards from "../assets/components/cards";
+import Cards from "../components/cards";
 
 export default function Location() {
   const { areaName: paramArea } = useParams();
