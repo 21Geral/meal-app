@@ -3,14 +3,19 @@ export default function Footer() {
     <footer className="bg-[#8B2E2E]  py-6 px-4 text-white">
       <div className="container mx-auto flex flex-col space-y-6">
         <div className="flex flex-col md:flex-row w-full items-center justify-between">
-          <div className="w-full md:w-1/3 text-center md:text-left order-3 md:order-1 mb-6 md:mb-0">
-            <p className="text-sm">© 2025 Mormones a la Barbacoa.</p>
+          <div className="w-full md:w-1/3 text-center md:text-left order-3 md:order-1 mb-6 md:mb-0 py-2">
+            <p className="text-lx">© 2025 Gourmet Recipe.</p>
           </div>
 
           <div className="w-full md:w-1/3 text-center order-1 md:order-2 mb-6 md:mb-0 ">
             <h3 className="text-lg font-bold mb-2">Redes Sociales</h3>
             <div className="flex justify-center space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <a
+                className="active:scale-140"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg viewBox="0 0 24 24" fill="none" className="w-8 h-8 ">
                   <path
                     fill-rule="evenodd"
@@ -20,24 +25,52 @@ export default function Footer() {
                   ></path>
                 </svg>
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" className="h-8 w-8">
+              <a
+                className="active:scale-140"
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 50 50"
+                  className="h-8 w-8"
+                >
                   <path
                     fill="#FFFFFF"
                     d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"
                   ></path>
                 </svg>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <a
+                className="active:scale-140"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg fill="#FFFFFF" viewBox="0 0 32 32" className="w-9 h-9">
                   <path d="M20.445 5h-8.891A6.559 6.559 0 0 0 5 11.554v8.891A6.559 6.559 0 0 0 11.554 27h8.891a6.56 6.56 0 0 0 6.554-6.555v-8.891A6.557 6.557 0 0 0 20.445 5zm4.342 15.445a4.343 4.343 0 0 1-4.342 4.342h-8.891a4.341 4.341 0 0 1-4.341-4.342v-8.891a4.34 4.34 0 0 1 4.341-4.341h8.891a4.342 4.342 0 0 1 4.341 4.341l.001 8.891z"></path>
                   <path d="M16 10.312c-3.138 0-5.688 2.551-5.688 5.688s2.551 5.688 5.688 5.688 5.688-2.551 5.688-5.688-2.55-5.688-5.688-5.688zm0 9.163a3.475 3.475 0 1 1-.001-6.95 3.475 3.475 0 0 1 .001 6.95zM21.7 8.991a1.363 1.363 0 1 1-1.364 1.364c0-.752.51-1.364 1.364-1.364z"></path>
                 </svg>
               </a>
-              <a className="active:scale-140" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+              <a
+                className="active:scale-140"
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-8 h-8"
+                >
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
                   <g id="SVGRepo_iconCarrier">
                     <path
                       fill-rule="evenodd"
@@ -54,8 +87,18 @@ export default function Footer() {
                   </g>
                 </svg>
               </a>
-              <a className="active:scale-140" href="#" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+              <a
+                className="active:scale-140"
+                href="https://web.whatsapp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-8 h-8"
+                >
                   <path
                     d="M6.014 8.00613C6.12827 7.1024 7.30277 5.87414 8.23488 6.01043L8.23339 6.00894C9.14051 6.18132 9.85859 7.74261 10.2635 8.44465C10.5504 8.95402 10.3641 9.4701 10.0965 9.68787C9.7355 9.97883 9.17099 10.3803 9.28943 10.7834C9.5 11.5 12 14 13.2296 14.7107C13.695 14.9797 14.0325 14.2702 14.3207 13.9067C14.5301 13.6271 15.0466 13.46 15.5548 13.736C16.3138 14.178 17.0288 14.6917 17.69 15.27C18.0202 15.546 18.0977 15.9539 17.8689 16.385C17.4659 17.1443 16.3003 18.1456 15.4542 17.9421C13.9764 17.5868 8 15.27 6.08033 8.55801C5.97237 8.24048 5.99955 8.12044 6.014 8.00613Z"
                     fill="#FFFFFF"
@@ -76,7 +119,7 @@ export default function Footer() {
             <div className="text-sm space-y-1">
               <p>Línea fija: 02229 456-789</p>
               <p>WhatsApp: +54 9 11 1555-6677</p>
-              <p>Correo: contacto@mormonesalabq.example</p>
+              <p>Correo: contact@gourmetrecipe.com</p>
             </div>
           </div>
         </div>

@@ -10,21 +10,25 @@ const visibleCountConfig = {
 };
 
 export default function CategoryButtons() {
-  const { visibleData, showPrev, showNext, isPrevDisabled, isNextDisabled } =
-    useMealDbCarousel(url, visibleCountConfig);
+  const { visibleData, showPrev, showNext, isPrevDisabled, isNextDisabled } = useMealDbCarousel(url, visibleCountConfig);
+
+  const [categories, setCategories] = useState([]);
+  const [startIdx, setStartIdx] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   return (
     <div className="flex justify-center items-center gap-3 py-4 w-full">
       <button
         onClick={showPrev}
         disabled={isPrevDisabled}
-        className="rounded px-2 py-2 font-bold flex items-center"
+        className="rounded px-2 py-2 font-bold flex items-center disabled:opacity-50"
         style={{ background: "#e8c7a3" }}
       >
         <svg width="24" height="24" viewBox="0 0 24 24">
           <polygon points="15,6 9,12 15,18" fill="#d87801" />
         </svg>
       </button>
+
       {visibleData.map((cat) => (
         <Link key={cat.idCategory} to={`/filter.php/c/${cat.strCategory}`}>
           <button
@@ -39,7 +43,7 @@ export default function CategoryButtons() {
       <button
         onClick={showNext}
         disabled={isNextDisabled}
-        className="rounded px-2 py-2 font-bold flex items-center"
+        className="rounded px-2 py-2 font-bold flex items-center disabled:opacity-50"
         style={{ background: "#e8c7a3" }}
       >
         <svg width="24" height="24" viewBox="0 0 24 24">
