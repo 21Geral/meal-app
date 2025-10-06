@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import RelatedMeals from "./RelatedMeals.jsx";
-import useMealDbCarousel from "../hooks/useMealDbCarousel"; // ajusta la ruta
-import React from "react";
+import useMealDbCarousel from "../hooks/useMealDbCarousel"; 
 
 export default function MealDetail() {
   const { idMeal } = useParams();

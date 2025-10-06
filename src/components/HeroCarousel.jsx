@@ -9,12 +9,6 @@ function HeroCarousel() {
   // (esto no existe directamente en la API, así que simulamos con nuestro hook y un endpoint "virtual")
   const RANDOM_URL = "https://www.themealdb.com/api/json/v1/1/random.php";
 
-  // Hook para manejar las comidas, visibleCount = 1 porque solo queremos mostrar una imagen a la vez
-  const { visibleData, loading, error } = useMealDbCarousel(
-    `/custom-random-carousel`, // clave única para el cache
-    { default: 1, sm: 1, lg: 1 }
-  );
-
   const [images, setImages] = useState([]);
 
   // Fetch manual para traer 5 comidas aleatorias y almacenarlas en sessionStorage usando la misma clave que el hook
@@ -63,10 +57,6 @@ function HeroCarousel() {
   };
 
   // --- Renderizado ---
-
-  if (error) {
-    return <div className="h-screen flex justify-center items-center text-xl text-red-500 text-center p-4">{error}</div>;
-  }
 
   if (!currentImage) {
     return (
