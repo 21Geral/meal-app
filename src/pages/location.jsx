@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Cards from "../assets/components/cards";
+import Cards from "../components/cards";
 
 export default function Location() {
   const { areaName: paramArea } = useParams();
@@ -57,7 +57,7 @@ export default function Location() {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-3 pt-6" style={{ color: "#d87801" }}>
+      <h2 className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-3 pt-6 text-[#930f01]">
         {flagUrl && <img src={flagUrl} alt={`${areaName} flag`} className="w-8 h-6 object-cover rounded shadow" />}
         {areaName}
       </h2>
