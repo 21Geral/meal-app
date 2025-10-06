@@ -53,10 +53,10 @@ export default function Cards({ endpoint = "random.php", count = 12 }) {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-4 lg:p-12">
-      {meals.map((meal) => (
+      {meals.map((meal, index) => (
         <Link
           to={`/meal/${meal.idMeal}`}
-          key={meal.idMeal}
+          key={`${meal.idMeal}-${index}`} // 🔥 combinación id + índice = único siempre
           className="bg-white rounded shadow p-2 flex flex-col items-center w-full max-w-xs mx-auto hover:scale-105 transition-transform duration-200"
         >
           <img src={meal.strMealThumb} alt={meal.strMeal} loading="lazy" className="w-full h-40 object-cover rounded" />
