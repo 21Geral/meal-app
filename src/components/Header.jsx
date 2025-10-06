@@ -42,9 +42,9 @@ export default function Header() {
           >
             {/* Botón de cierre */}
             <button onClick={closeMenu} className="absolute top-1 right-2.5 rounded-full active:scale-110">
-              <img src="./images/exit.png" alt="Cerrar" className="w-6 h-6" loading="lazy" />
+              <img src="/images/exit.png" alt="Cerrar" className="w-6 h-6" loading="lazy" />
             </button>
-            {/* 🔍 Buscador Mobile */}
+            {/* Buscador Mobile */}
             <div className="mt-8 text-black">
               <Search mobile />
             </div>
